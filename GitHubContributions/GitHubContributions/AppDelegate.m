@@ -106,13 +106,13 @@
         }
     }
 
-//    NSMutableArray * oldArray = [[[NSUserDefaults alloc] initWithSuiteName:@"UYK8GY9WS7.group.com.JustZht.GitHubContributions"] objectForKey:@"GitHubContributionsArray"];
+//    NSMutableArray * oldArray = [[[NSUserDefaults alloc] initWithSuiteName:@"UYK8GY9WS7.group.com.KevinAleman.GitHubContributions"] objectForKey:@"GitHubContributionsArray"];
     NSMutableArray * array = [[JZCommitManager sharedManager] refresh];
     if (array)
     {
         NSData *data = [NSKeyedArchiver archivedDataWithRootObject:array] ;
-        [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.JustZht.GitHubContributions"] setObject:data forKey:@"GitHubContributionsArray"];
-        if ([[[NSUserDefaults alloc] initWithSuiteName:@"group.com.JustZht.GitHubContributions"] synchronize])
+        [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.KevinAleman.GitHubContributions"] setObject:data forKey:@"GitHubContributionsArray"];
+        if ([[[NSUserDefaults alloc] initWithSuiteName:@"group.com.KevinAleman.GitHubContributions"] synchronize])
         {
             NSLog(@"UIBackgroundFetchResultNewData");
             completionHandler(UIBackgroundFetchResultNewData);

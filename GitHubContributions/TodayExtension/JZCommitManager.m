@@ -53,7 +53,7 @@ alpha:1.0]
 - (NSMutableArray *)refresh
 {
     [_commits removeAllObjects];
-    NSString *name = [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.JustZht.GitHubContributions"]  objectForKey:@"GitHubContributionsName"];
+    NSString *name = [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.KevinAleman.GitHubContributions"]  objectForKey:@"GitHubContributionsName"];
     
     if (name == nil)
     {

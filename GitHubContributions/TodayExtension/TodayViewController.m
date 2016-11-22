@@ -35,7 +35,7 @@
 #pragma mark - UI
 - (IBAction)goSettingsButtonPressed:(UIButton *)sender
 {
-    NSURL *url = [NSURL URLWithString:@"com.JustZht.GitHubContributions://"];
+    NSURL *url = [NSURL URLWithString:@"com.KevinAleman.GitHubContributions://"];
     [self.extensionContext openURL:url completionHandler:nil];
 }
 
@@ -43,11 +43,11 @@
 {
     _settingsButton.hidden = YES;
     
-//     [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.JustZht.GitHubContributions"] removeObjectForKey:@"GitHubContributionsArray"];
-//     [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.JustZht.GitHubContributions"] removeObjectForKey:@"GitHubContributionsName"];
+//     [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.KevinAleman.GitHubContributions"] removeObjectForKey:@"GitHubContributionsArray"];
+//     [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.KevinAleman.GitHubContributions"] removeObjectForKey:@"GitHubContributionsName"];
     
     NSMutableArray *weeks;
-    NSData *data = [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.JustZht.GitHubContributions"]  objectForKey:@"GitHubContributionsArray"];
+    NSData *data = [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.KevinAleman.GitHubContributions"]  objectForKey:@"GitHubContributionsArray"];
     if (data != nil)
     {
         weeks = [NSKeyedUnarchiver unarchiveObjectWithData:data];
@@ -73,8 +73,8 @@
         [_commitImageView refreshFromCommits:weeks];
         
         NSData *data = [NSKeyedArchiver archivedDataWithRootObject:weeks] ;
-        [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.JustZht.GitHubContributions"] setObject:data forKey:@"GitHubContributionsArray"];
-        if ([[[NSUserDefaults alloc] initWithSuiteName:@"group.com.JustZht.GitHubContributions"] synchronize])
+        [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.KevinAleman.GitHubContributions"] setObject:data forKey:@"GitHubContributionsArray"];
+        if ([[[NSUserDefaults alloc] initWithSuiteName:@"group.com.KevinAleman.GitHubContributions"] synchronize])
         {
             NSLog(@"viewWillAppearDataTaskNewData");
         }else

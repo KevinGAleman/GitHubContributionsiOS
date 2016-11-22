@@ -27,7 +27,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     
-    NSString *name = [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.JustZht.GitHubContributions"] objectForKey:@"GitHubContributionsName"];
+    NSString *name = [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.KevinAleman.GitHubContributions"] objectForKey:@"GitHubContributionsName"];
     if (name)
     {
         _userNameField.text = name;
@@ -43,10 +43,10 @@
 - (IBAction)updateInfoButtonPressed:(id)sender
 {
     NSString *trimmedName = [_userNameField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.JustZht.GitHubContributions"] setObject:trimmedName forKey:@"GitHubContributionsName"];
+    [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.KevinAleman.GitHubContributions"] setObject:trimmedName forKey:@"GitHubContributionsName"];
     
     UIButton *button = (UIButton *)sender;
-    [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.JustZht.GitHubContributions"] removeObjectForKey:@"GitHubContributionsArray"];
+    [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.KevinAleman.GitHubContributions"] removeObjectForKey:@"GitHubContributionsArray"];
     
     [button setTitle:@"Widget will update soon" forState:UIControlStateNormal];
 }
